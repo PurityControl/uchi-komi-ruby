@@ -1,0 +1,3 @@
+#+TITLE: Uchi komi for Ruby
+
+* TODO link to go kyo
