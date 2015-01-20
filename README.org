@@ -1,3 +1,9 @@
 #+TITLE: Uchi komi for Ruby
 
-* TODO link to go kyo
+* Gokyo
+
+- [[file:doc/ikkyo.org][Dai-ikkyo]] - Settng up the environment
+- Dai-nikyo - Testing
+- Dai-sankyo - Resources / Cheat Sheets
+- Dai-yonkyo - Workflows
+- Dai-gokyo - Documentation
