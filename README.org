@@ -3,7 +3,7 @@
 * Gokyo
 
 - [[file:doc/ikkyo.org][Dai-ikkyo]] - Settng up the environment
-- Dai-nikyo - Testing
-- Dai-sankyo - Resources / Cheat Sheets
-- Dai-yonkyo - Workflows
-- Dai-gokyo - Documentation
+- [[file:doc/nikyo.org][Dai-nikyo]] - Testing
+- [[file:doc/sankyo.org][Dai-sankyo]] - Resources / Cheat Sheets
+- [[file:doc/yonkyo.org][Dai-yonkyo]] - Workflows
+- [[file:doc/gokyo.org][Dai-gokyo]] - Documentation
