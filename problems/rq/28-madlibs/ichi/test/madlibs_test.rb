@@ -5,7 +5,7 @@ require 'madlibs'
 
 class TestMadlibs < MiniTest::Unit::TestCase
   def setup
-    #write setup stuff here
+    @madlib = Madlibs.new "A madlibs string"
   end
 
   def teardown
@@ -22,5 +22,10 @@ class TestMadlibs < MiniTest::Unit::TestCase
                   "Must supply a string to initialize an instance") do
       Madlibs.new
     end
+  end
+
+  def test_stored_value_p_true
+    @madlib.store_value('gem:ruby')
+    assert @madlib.stored_value?('gem')
   end
 end
