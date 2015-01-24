@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # uncomment if you want to specify the ruby version
-#ruby '2.2.0'
+ruby '2.2.0'
 
 # gem 'gemname', 'version-details'
 # version-details is a string  such as '~> 4.2.0'
