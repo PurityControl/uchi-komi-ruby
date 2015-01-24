@@ -1,0 +1,27 @@
+#+TITLE: Notes for first repetition of madlibs
+
+* Implementation thoughts
+
+** Top Down
+
+- Extract placeholders from the string into array
+- map through placeholder array creating new array of values to be inserted
+  - if placeholder is request to memoize
+    - get value from user
+    - add value to mapped array
+    - put value into memo map
+  - else
+    - if placeholder is already memoized
+      - use memoized value
+    - else
+      - ask user for value and add value to mapped array
+
+** Process
+*** create ruby project template
+
+Use rake task
+
+*** Tests
+- a madlib class is initialised with a mad lib string
+- a madlib throws an error if initialised without a string
+....
