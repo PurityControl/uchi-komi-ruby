@@ -34,4 +34,12 @@ class TestMadlibs < MiniTest::Unit::TestCase
     refute @madlib.stored_value?('gem'),
       "Must refute the absence of a stored value"
   end
+
+  def test_named_placeholder_p_true
+    assert @madlib.named_placeholder?("gem:ruby")
+  end
+
+  def test_named_placeholder_p_false
+    refute @madlib.named_placeholder?("gem")
+  end
 end

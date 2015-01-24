@@ -15,6 +15,10 @@ class Madlibs
     placeholder(key) != nil
   end
 
+  def named_placeholder? str
+    /:/ =~ str 
+  end
+
   private
   # should these go into their own class and be enumerable
   def memoize_placeholder key, value
