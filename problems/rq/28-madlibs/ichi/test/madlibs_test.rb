@@ -40,6 +40,6 @@ class TestMadlibs < MiniTest::Unit::TestCase
   end
 
   def test_named_placeholder_p_false
-    refute @madlib.name_placeholder?("gem")
+    refute @madlib.named_placeholder?("gem")
   end
 end
