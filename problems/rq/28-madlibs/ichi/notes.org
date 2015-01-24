@@ -25,3 +25,8 @@ Use rake task
 - a madlib class is initialised with a mad lib string
 - a madlib throws an error if initialised without a string
 ....
+
+** Questions
+
+- Should the internal hash be its own class implementing enumerable?
+
