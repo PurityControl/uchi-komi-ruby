@@ -13,7 +13,7 @@ class TestMadlibs < MiniTest::Unit::TestCase
   end
 
   def test_new_project_exists
-    assert Madlibs.new("madlibs string")
+    assert Madlibs.new("madlibs string"),
       "Madlibs needs to be initialized with a madlib string."
   end
 
@@ -26,6 +26,12 @@ class TestMadlibs < MiniTest::Unit::TestCase
 
   def test_stored_value_p_true
     @madlib.store_value('gem:ruby')
-    assert @madlib.stored_value?('gem')
+    assert @madlib.stored_value?('gem'),
+      "Must confirm the presence of a stored value"
+  end
+
+  def test_stored_value_p_false
+    refute @madlib.stored_value?('gem'),
+      "Must refute the absence of a stored value"
   end
 end
