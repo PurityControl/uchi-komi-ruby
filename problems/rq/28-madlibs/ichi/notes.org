@@ -26,6 +26,14 @@ Use rake task
 - a madlib throws an error if initialised without a string
 ....
 
+** Features
+
+- command line arguments 
+  - pass madlib in as string
+  - pass madlib in as file
+  - pass keys in as file?
+- sinatra interface
+
 ** Questions
 
 - Should the internal hash be its own class implementing enumerable?
