@@ -3,8 +3,14 @@ require 'rake'
 
 require 'madlibs'
 
+class Madlibs
+  def value_from_user prompt
+    "ruby"
+  end
+end
+
 class TestMadlibs < MiniTest::Unit::TestCase
-  def setup
+    def setup
     @madlib = Madlibs.new "A madlibs string"
   end
 

@@ -10,7 +10,8 @@ class Madlibs
   end
 
   def store_value col_del_str
-    key, value = col_del_str.split(':')
+    key, prompt = col_del_str.split(':')
+    value = value_from_user prompt
     memoize_placeholder key, value
   end
 
@@ -35,6 +36,11 @@ class Madlibs
       append_placeholder_list $1
       "%s"
     end
+  end
+
+  def value_from_user prompt
+    print "Please enter a value for #{prompt}: "
+    gets.strip
   end
 
   private
