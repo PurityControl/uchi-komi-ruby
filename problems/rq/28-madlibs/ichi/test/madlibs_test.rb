@@ -51,7 +51,7 @@ class TestMadlibs < MiniTest::Unit::TestCase
 
   def test_placeholder_returns_value
     @madlib.store_value('gem:ruby')
-    assert_equal @madlib.placeholder('gem'), 'ruby',
+    assert_equal @madlib.get_placeholder('gem'), 'ruby',
       "The stored value should be returned"
   end
 
@@ -74,5 +74,24 @@ class TestMadlibs < MiniTest::Unit::TestCase
     madlib.extract_placeholders
     assert_equal "my favourite gemstone is %s", madlib.madlib_strf,
       "extract placeholders should have a madlib_strf with one format string"
+  end
+
+  def test_store_value_returns_stored_value
+    assert_equal "ruby", @madlib.store_value("gem:ruby")
+  end
+
+  def test_process_placeholders
+    madlib = Madlibs.new "my favourite gemstone is ((gem:a gem)) and ((a gem)) is not ((other gem))"
+    madlib.extract_placeholders
+    madlib.process_placeholders
+    assert_equal ["ruby", "ruby", "ruby"], madlib.value_list
+  end
+
+  def test_print_madlib
+    madlib = Madlibs.new "my favourite gemstone is ((gem:a gem)) and ((a gem)) is not ((other gem))"
+    madlib.extract_placeholders
+    madlib.process_placeholders
+    assert_equal "my favourite gemstone is ruby and ruby is not ruby",
+      madlib.print_madlib
   end
 end
