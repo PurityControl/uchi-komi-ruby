@@ -10,6 +10,12 @@ class Madlibs
     @value_list = Array.new
   end
 
+  def run
+    extract_placeholders
+    process_placeholders
+    puts print_madlib
+  end
+
   def print_madlib
     sprintf madlib_strf, *value_list
   end
