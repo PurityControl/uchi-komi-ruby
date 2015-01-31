@@ -1,0 +1,3 @@
+#+TITLE: Notes for first iteration of summing even fibonaccis
+
+1st solution using ruby blocks to calculate the solution
