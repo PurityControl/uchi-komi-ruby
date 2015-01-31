@@ -1,0 +1,2 @@
+class Multiples
+end
