@@ -1,80 +1,80 @@
 class Madlibs
-  attr_reader :madlib_string, :placeholder_list
-  attr_accessor :madlib_strf, :value_list
+  attr_reader :madlib_string, :tokens
+  attr_accessor :madlib_strf, :token_values
 
   def initialize madlib_string
     @madlib_string = madlib_string
-    @memoized_placeholders = Hash.new
+    @memoized_tokens = Hash.new
     @madlib_strf = ""
-    @placeholder_list = Array.new
-    @value_list = Array.new
+    @tokens = Array.new
+    @token_values = Array.new
   end
 
   def run
-    extract_placeholders
-    process_placeholders
+    extract_tokens
+    tokens_to_values
     puts print_madlib
   end
 
-  def print_madlib
-    sprintf madlib_strf, *value_list
+  private
+  def append_tokens word
+    @tokens << word
   end
 
-  def process_placeholders
-    self.value_list = placeholder_list.map {|ph| process_placeholder(ph) }
+  def append_to_token_values value
+    @token_values << value
   end
 
-  def process_placeholder placeholder
-    if named_placeholder? placeholder
-      store_value placeholder
-    elsif stored_value? placeholder
-      get_placeholder placeholder
-    else
-      value_from_user placeholder
+  def extract_tokens
+    self.madlib_strf = @madlib_string.gsub(/\(\(([^)][^)]*)\)\)/).each do
+      append_tokens $1
+      "%s"
     end
   end
 
-  def append_to_value_list value
-    @value_list << value
+  def get_token key
+    @memoized_tokens[key]
+  end
+
+  # should these go into their own class and be enumerable
+  def memoize_token key, value
+    @memoized_tokens[key] = value
+  end
+
+  def named_token? str
+    /:/ =~ str
+  end
+
+  def print_madlib
+    sprintf madlib_strf, *token_values
   end
 
   def store_value col_del_str
     key, prompt = col_del_str.split(':')
     value = value_from_user prompt
-    memoize_placeholder key, value
+    memoize_token key, value
   end
 
   def stored_value? key
-    get_placeholder(key) != nil
+    get_token(key) != nil
   end
 
-  def named_placeholder? str
-    /:/ =~ str
-  end
-
-  def get_placeholder key
-    @memoized_placeholders[key]
-  end
-
-  def append_placeholder_list word
-    @placeholder_list << word
-  end
-
-  def extract_placeholders
-    self.madlib_strf = @madlib_string.gsub(/\(\(([^)][^)]*)\)\)/).each do
-      append_placeholder_list $1
-      "%s"
+  def token_to_value token
+    if named_token? token
+      store_value token
+    elsif stored_value? token
+      get_token token
+    else
+      value_from_user token
     end
+  end
+
+  def tokens_to_values
+    self.token_values = tokens.map {|tok| token_to_value(tok) }
   end
 
   def value_from_user prompt
     print "Please enter a value for #{prompt}: "
     gets.strip
-  end
-
-  private
-  # should these go into their own class and be enumerable
-  def memoize_placeholder key, value
-    @memoized_placeholders[key] = value
   end
 end
