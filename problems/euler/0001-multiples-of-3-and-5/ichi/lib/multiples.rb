@@ -1,2 +1,3 @@
-class Multiples
+module Multiples
+
 end
