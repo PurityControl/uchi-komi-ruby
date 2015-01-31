@@ -21,7 +21,7 @@ class Madlibs
   end
 
   def tokens_to_values
-    self.token_values = tokens.map {|ph| token_to_value(ph) }
+    self.token_values = tokens.map {|tok| token_to_value(tok) }
   end
 
   def token_to_value token
