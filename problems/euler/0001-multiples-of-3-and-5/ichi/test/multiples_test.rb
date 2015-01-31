@@ -12,11 +12,6 @@ class TestNewProject < MiniTest::Unit::TestCase
     #write teardown stuff here
   end
 
-  def test_multiples_exists
-    assert Multiples.new
-      "Expected to be able to create a Multiple; instance"
-  end
-
   def test_multiples_below_10
     assert_equal 23, Multiples::multiples_below(10)
   end
