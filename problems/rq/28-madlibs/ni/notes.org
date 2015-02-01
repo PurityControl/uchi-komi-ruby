@@ -1,0 +1,19 @@
+#+TITLE: Notes for first repetition of madlibs
+
+* Implementation thoughts
+
+** Dependency Injection
+
+- Take ichi repetition and build in dependency injection
+
+** Questions
+
+- Should the internal hash be its own class implementing enumerable?
+
+** Next?
+
+- refactor and improve variable and function names
+- refactor extract out classes for single responsibility
+- pass classes in as dependency injection
+
+** Reflection - is it any better ?
