@@ -1,0 +1,17 @@
+#+TITLE: Notes for first iteration of largest prime factors
+
+1st solution using ruby native prime generation library
+
+1st attempt brute force method just to get right answer - iterate through
+all primes up to the number in question finding the largest one that is
+divisible.
+
+This did not work however the generation of all the primes up to such a
+large number took to long.
+
+Settled with continually finding the smallest prime factor, calculating
+its complement and then calculating the smalles prime on that recursively.
+Once we have all the primes we can just get the maximum prime in the list
+of prime factors
+
+
