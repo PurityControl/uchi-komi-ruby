@@ -1,0 +1,5 @@
+#+TITLE: Notes for first iteration of largest palindrome
+
+Only thing of worthy note is ruby's absence of list comprehensions means
+making the products array more complicated than it has to be.
+
