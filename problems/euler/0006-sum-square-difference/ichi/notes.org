@@ -1,0 +1,3 @@
+#+TITLE: Notes for first iteration of multiples
+
+1st solution simple solution using map and reduce
