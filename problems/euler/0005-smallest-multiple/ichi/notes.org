@@ -7,3 +7,9 @@ THIS IS NOT A WORKING SOLUTION. THE IMPLEMENTATION IS SLOW. IT SEEMS TO
 BE CORRECT IN SO FAR AS THE RESULT IS CORRECT FOR MULTIPLES UP TO 10
 BUT IT HAS TO BE HALTED AFTER 5 MINS WHEN A SOLUTIONS STILL HASN'T BEEN FOUND
 FOR MULTIPLES UP TO 20.
+
+This does work but takes too long see test results below
+
+Fabulous run in 227.054940s, 0.0176 runs/s, 0.0264 assertions/s.
+
+Test is take a little under 4 minutes to complete on a desktop machine
