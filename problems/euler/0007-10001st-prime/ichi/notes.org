@@ -1,0 +1,8 @@
+#+TITLE: Notes for 100001st prime number
+
+A number is prime if it is not divisible by any prime number smaller than it.
+Other than 2 even numbers are not prime.
+If we start with 2 then we can iterate over the odd numbers checking whether
+our current number is divisible by any other prime numbers in the set.
+
+this is taking about 4 seconds to run
