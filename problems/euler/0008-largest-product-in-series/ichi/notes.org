@@ -1,0 +1,6 @@
+#+TITLE: Notes for Largest Product in Series
+
+1st solution, using blocks and iterators for solutions
+
+- taking time to implement each makes the solution simple using ruby's
+  standard enumerable tools
