@@ -1,0 +1,4 @@
+#+TITLE: Notes for Largest Product in Series
+
+1st solution, used each to find the triplet and reduce to calculate product
+
