@@ -37,8 +37,12 @@ class TestProductInGrid < MiniTest::Unit::TestCase
     assert_equal 400, @grid.split().length
   end
 
-  def test_parse_product_in_grid
-    assert_equal 400, ProductInGrid.parse_grid(@grid).length
+  def test_new_20_by_20_grid
+    grid = Grid.new @grid, 20, 20
+    assert_equal 20, grid.instance_variable_get(:@grid).length
   end
 
+  def test_error_raised_for_size_mismatch
+    assert_raises(ArgumentError) { Grid.new @grid, 20, 21 }
+  end
 end
