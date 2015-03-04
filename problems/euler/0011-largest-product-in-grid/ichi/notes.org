@@ -1,4 +1,15 @@
 #+TITLE: Notes for first iteration of Product in Grid
 
-1st implementation of Product in Grid
+* 1st solution proposed
+Suggest having a Grid class responsible for parsing the string into
+a 20 x 20 grid and returning an array. Additionally have a GridSequence
+class responsible for taking a grid and sequence length and returning
+(through each ?) all contigous sequences of that length either horizontally,
+vertically or diagonally.
+
+* Contracts
+Grid.new string, length, depth
+GridSequence.new grid, sequence_length
+
+* Retrospective
 
