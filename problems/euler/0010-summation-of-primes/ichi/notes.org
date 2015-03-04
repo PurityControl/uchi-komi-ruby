@@ -1,0 +1,4 @@
+#+TITLE: Notes for Summation of Primes
+
+1st solution, used Ruby's inbuilt primes library and reduce.
+
