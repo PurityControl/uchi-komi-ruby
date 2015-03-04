@@ -1,0 +1,4 @@
+#+TITLE: Notes for first iteration of Product in Grid
+
+1st implementation of Product in Grid
+
