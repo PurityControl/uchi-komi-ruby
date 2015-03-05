@@ -45,4 +45,14 @@ class TestProductInGrid < MiniTest::Unit::TestCase
   def test_error_raised_for_size_mismatch
     assert_raises(ArgumentError) { Grid.new @grid, 20, 21 }
   end
+
+  def test_map_each_with_coords
+    grid = Grid.new "1 2 3 4 5 6 7 8", 4, 2
+    grid_array = []
+    grid.each_with_coords{ |val, index| grid_array << [val, index] }
+    assert_equal [[1, [0,0]], [2, [0,1]], [3, [0,2]], [4, [0,3]],
+                  [5, [1,0]], [6, [1,1]], [7, [1,2]], [8, [1,3]]],
+                  grid_array
+  end
+
 end
