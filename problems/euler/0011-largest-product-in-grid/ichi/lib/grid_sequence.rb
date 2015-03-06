@@ -67,7 +67,7 @@ class GridSequence
     row, col = coords
     seq = []
     0.upto(sequence_length - 1) do |offset|
-      seq << grid[row - offset][col - offset]
+      seq << grid[row + offset][col - offset]
     end
     seq
   end
