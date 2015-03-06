@@ -12,4 +12,8 @@ Grid.new string, length, depth
 GridSequence.new grid, sequence_length
 
 * Retrospective
+Test helped a lot, use of enumerable and each really makes helps
+solving these sort of problems.
+Like adding grid to grid sequence through dependency injection.
+Kept the separation of concerns more clear cut.
 
