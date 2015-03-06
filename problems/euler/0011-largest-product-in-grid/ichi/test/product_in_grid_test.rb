@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'product_in_grid'
+require 'grid_sequence'
 
 class TestProductInGrid < MiniTest::Unit::TestCase
   def setup
@@ -55,4 +56,15 @@ class TestProductInGrid < MiniTest::Unit::TestCase
                   grid_array
   end
 
+  def test_horizontal_sequence_true
+    grid = Grid.new "1 2 3 4", 2, 2
+    grid_seq = GridSequence.new grid, 2
+    assert grid_seq.send :horizontal_sequence?, [0, 0]
+  end
+
+  def test_horizontal_sequence_false
+    grid = Grid.new "1 2 3 4", 2, 2
+    grid_seq = GridSequence.new grid, 3
+    refute grid_seq.send :horizontal_sequence?, [0, 0]
+  end
 end

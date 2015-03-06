@@ -3,7 +3,7 @@ class Grid
   include Enumerable
   extend Forwardable
 
-  def_delegators :grid, :each, :each_with_index, :[]
+  def_delegators :grid, :each, :each_with_index, :[], :length
 
   def initialize nums, length, depth
     nums = nums.split().map(&:to_i)
