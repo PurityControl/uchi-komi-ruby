@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'rake'
 
-require 'product_in_grid'
+require 'grid'
 require 'grid_sequence'
 
 class TestProductInGrid < MiniTest::Unit::TestCase
