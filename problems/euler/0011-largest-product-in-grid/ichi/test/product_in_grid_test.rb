@@ -62,15 +62,28 @@ class TestProductInGrid < MiniTest::Unit::TestCase
     assert grid_seq.send :horizontal_sequence?, [0, 0]
   end
 
-  def test_horizontal_sequence_false
+  def test_horizontal_backward_sequence_false
     grid = Grid.new "1 2 3 4", 2, 2
     grid_seq = GridSequence.new grid, 3
     refute grid_seq.send :horizontal_sequence?, [0, 0]
   end
 
+  def test_horizontal_backward_sequence_true
+    grid = Grid.new "1 2 3 4", 2, 2
+    grid_seq = GridSequence.new grid, 2
+    assert grid_seq.send :horizontal_backward_sequence?, [0, 1]
+  end
+
+  def test_horizontal_backward_sequence_false
+    grid = Grid.new "1 2 3 4", 2, 2
+    grid_seq = GridSequence.new grid, 3
+    refute grid_seq.send :horizontal_backward_sequence?, [0, 1]
+  end
+
   def test_grid_sequence_each
     grid = Grid.new "1 2 3 4", 2, 2
     grid_seq = GridSequence.new grid, 2
-    assert_equal [[1, 2], [3, 4], [1, 3], [2, 4]].sort, grid_seq.to_a.sort
+    assert_equal [[1, 2], [3, 4], [1, 3], [2, 4], [1, 4], [2, 3]].sort,
+                  grid_seq.to_a.sort
   end
 end
