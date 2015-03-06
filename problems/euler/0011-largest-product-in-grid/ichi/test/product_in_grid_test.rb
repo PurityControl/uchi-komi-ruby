@@ -86,4 +86,10 @@ class TestProductInGrid < MiniTest::Unit::TestCase
     assert_equal [[1, 2], [3, 4], [1, 3], [2, 4], [1, 4], [2, 3]].sort,
                   grid_seq.to_a.sort
   end
+
+  def test_euler_answer
+    grid = Grid.new @grid, 20, 20
+    grid_seq = GridSequence.new grid, 4
+    assert_equal 70600674, grid_seq.map{|seq| seq.reduce(:*)}.max
+  end
 end
