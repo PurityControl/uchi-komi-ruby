@@ -1,0 +1,10 @@
+#+TITLE: Notes for first repetition of lcd numbers
+
+* Implementation thoughts
+
+* Features
+
+* Questions
+
+* Retrospective
+
