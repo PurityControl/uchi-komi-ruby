@@ -1,9 +1,27 @@
 class LcdOutput
-  TOP            = '1000000'
-  UPPER_LEFT     = '0100000'
-  UPPER_RIGHT    = '0010000'
-  MIDDLE         = '0001000'
-  LOWER_LEFT     = '0000100'
-  LOWER_RIGHT    = '0000010'
-  BOTTOM         = '0000001'
+  TOP            = 64
+  UPPER_LEFT     = 32
+  UPPER_RIGHT    = 16
+  MIDDLE         = 8
+  LOWER_LEFT     = 4
+  LOWER_RIGHT    = 2
+  BOTTOM         = 1
+
+  def self.char_for mask, mapping
+    case mask
+    when TOP, MIDDLE, BOTTOM
+      char_or_blank mask, mapping, "_"
+    else
+      char_or_blank mask, mapping, "|"
+    end
+  end
+
+  private
+  def self.char_or_blank mask, mapping, char
+    if (mask & mapping) == 0
+      " "
+    else
+      char
+    end
+  end
 end
