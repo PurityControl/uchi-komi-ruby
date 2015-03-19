@@ -19,25 +19,40 @@ class LcdNumber
   attr_accessor :top, :middle, :bottom, :upper_vertical, :lower_vertical
 
   def render_top
-    self.top = render_horizontal(LcdOutput::TOP)
+    self.top = render_horizontal(:top)
   end
 
   def render_upper_vertical
-    self.upper_vertical = render_vertical LcdOutput::UPPER_LEFT,
-      LcdOutput::UPPER_RIGHT
+    self.upper_vertical = render_vertical :upper_left, :upper_right
   end
 
   def render_middle
-    self.middle = render_horizontal LcdOutput::MIDDLE
+    self.middle = render_horizontal :middle
   end
 
   def render_lower_vertical
-    self.lower_vertical = render_vertical LcdOutput::LOWER_LEFT,
-      LcdOutput::LOWER_RIGHT
+    self.lower_vertical = render_vertical :lower_left, :lower_right
   end
 
   def render_bottom
-    self.bottom = render_horizontal LcdOutput::BOTTOM
+    self.bottom = render_horizontal :bottom
+  end
+
+  def char_or_blank mask, mapping, char
+    if LcdOutput.output_at? mask, mapping
+      char
+    else
+      " "
+    end
+  end
+
+  def char_for mask, mapping
+    case mask
+    when :top, :middle, :bottom
+      char_or_blank mask, mapping, "_"
+    else
+      char_or_blank mask, mapping, "|"
+    end
   end
 
   def render_horizontal position
@@ -45,7 +60,7 @@ class LcdNumber
     size.times do
       #TODO char_for should be part of this class the call should be to
       #a boolean output_at? in order to clearly seperate roles
-      tmp << LcdOutput.char_for(position, number)
+      tmp << char_for(position, number)
     end
     tmp << "  "
   end
@@ -54,8 +69,7 @@ class LcdNumber
     rows = []
     tmp = ""
     size.times do
-      tmp << LcdOutput.char_for(left ,number) << " " <<
-        LcdOutput.char_for(right, number) << " "
+      tmp << char_for(left ,number) << " " << char_for(right, number) << " "
       rows << tmp
     end
     rows
