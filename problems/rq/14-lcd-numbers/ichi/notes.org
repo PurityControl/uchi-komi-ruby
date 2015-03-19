@@ -11,8 +11,10 @@
 
 * Features
 ** TODO Tasks
-- [ ] remove redundant methods in LcdOutput and push responsibitlity for
+- [X] remove redundant methods in LcdOutput and push responsibitlity for
   rendering back into calling class
+- [ ] LcdOutput could take on rendering responsibility if there was a 
+  method that took a block?
 - [ ] identify roles
 - [ ] set up tests highlighting what those roles are
 
