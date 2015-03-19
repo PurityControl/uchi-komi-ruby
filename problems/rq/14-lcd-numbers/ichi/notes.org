@@ -1,6 +1,13 @@
 #+TITLE: Notes for first repetition of lcd numbers
 
 * Implementation thoughts
+** Classes
+- LcdNumber, responsible for outputting a string representing the number
+- LcdMapping, responsible for returning integers as a bitmap mask
+- LcdOutput, responsible for returning a "string" representing whether
+  there should be output at an Lcd postion. Also stores constants representing
+  the postions of an Lcd Display
+
 
 * Features
 
