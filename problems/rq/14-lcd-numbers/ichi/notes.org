@@ -10,6 +10,11 @@
 
 
 * Features
+** TODO Tasks
+- [ ] remove redundant methods in LcdOutput and push responsibitlity for
+  rendering back into calling class
+- [ ] identify roles
+- [ ] set up tests highlighting what those roles are
 
 * Questions
 
