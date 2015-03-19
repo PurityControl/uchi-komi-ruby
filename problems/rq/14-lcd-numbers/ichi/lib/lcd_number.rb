@@ -43,6 +43,8 @@ class LcdNumber
   def render_horizontal position
     tmp = " "
     size.times do
+      #TODO char_for should be part of this class the call should be to
+      #a boolean output_at? in order to clearly seperate roles
       tmp << LcdOutput.char_for(position, number)
     end
     tmp << "  "
