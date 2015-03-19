@@ -63,4 +63,81 @@ class TestLcdNumber < MiniTest::Unit::TestCase
     assert_equal lcd.render, [" _  ", "| | ", "    ", "| | ", " _  "]
   end
 
+  def test_render_1_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(1), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, ["     ", "   | ", "   | ", "     ", "   | ",
+      "   | ", "     "]
+  end
+
+  def test_render_2_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(2), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "   | ", "   | ", " __  ", "|    ",
+      "|    ", " __  "]
+  end
+
+  def test_render_2_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(2), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "   | ", "   | ", " __  ", "|    ",
+      "|    ", " __  "]
+  end
+
+  def test_render_3_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(3), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "   | ", "   | ", " __  ", "   | ",
+      "   | ", " __  "]
+  end
+
+  def test_render_4_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(4), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, ["     ", "|  | ", "|  | ", " __  ", "   | ",
+      "   | ", "     "]
+  end
+
+  def test_render_5_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(5), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "|    ", "|    ", " __  ", "   | ",
+      "   | ", " __  "]
+  end
+
+  def test_render_6_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(6), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "|    ", "|    ", " __  ", "|  | ",
+      "|  | ", " __  "]
+  end
+
+  def test_render_7_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(7), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "   | ", "   | ", "     ", "   | ",
+      "   | ", "     "]
+  end
+
+  def test_render_8_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(8), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "|  | ", "|  | ", " __  ", "|  | ",
+      "|  | ", " __  "]
+  end
+
+  def test_render_9_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(9), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "|  | ", "|  | ", " __  ", "   | ",
+      "   | ", " __  "]
+  end
+
+  def test_render_0_double_size
+    lcd = LcdNumber.new LcdMapping.map_for(0), 2
+    #skip("need to clarify api")
+    assert_equal lcd.render, [" __  ", "|  | ", "|  | ", "     ", "|  | ",
+      "|  | ", " __  "]
+  end
+
 end

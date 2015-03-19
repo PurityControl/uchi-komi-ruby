@@ -1,7 +1,7 @@
 class LcdNumber
-  def initialize number
+  def initialize number, size=1
     @number = number
-    @size = 1
+    @size = size
   end
 
   def render
@@ -58,8 +58,6 @@ class LcdNumber
   def render_horizontal position
     tmp = " "
     size.times do
-      #TODO char_for should be part of this class the call should be to
-      #a boolean output_at? in order to clearly seperate roles
       tmp << char_for(position, number)
     end
     tmp << "  "
@@ -69,8 +67,11 @@ class LcdNumber
     rows = []
     tmp = ""
     size.times do
-      tmp << char_for(left ,number) << " " << char_for(right, number) << " "
+      tmp << char_for(left, number)
+      size.times{ tmp << " " }
+      tmp << char_for(right, number) << " "
       rows << tmp
+      tmp = ""
     end
     rows
   end
