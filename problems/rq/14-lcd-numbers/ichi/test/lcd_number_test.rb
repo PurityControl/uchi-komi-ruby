@@ -14,7 +14,6 @@ class TestLcdNumber < MiniTest::Unit::TestCase
 
   def test_render_1
     lcd = LcdNumber.new LcdMapping.map_for(1)
-    #skip("need to clarify api")
     assert_equal lcd.render, ["    ", "  | ", "    ", "  | ", "    "]
   end
 
