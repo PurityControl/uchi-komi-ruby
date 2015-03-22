@@ -7,12 +7,14 @@ class LcdNumbers
   end
 
   def render
+    return numbers if numbers.length <= 1
     render_array = numbers.map(&:render)
-    #["", "", "", "", ""].zip(*render_array).each{|line| line.join("")}
-    ["", "", "", "", ""].zip(*render_array)
+    render_array[0].zip(*render_array[1..-1])
   end
 
   def print
-    render.each{|line| puts line.join("") }
+    render.each do |line|
+      puts line.join("")
+    end
   end
 end
