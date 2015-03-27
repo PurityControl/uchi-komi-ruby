@@ -1,7 +1,7 @@
 class LcdNumber
-  def initialize number, size=2
-    @number = number
-    @size = size
+  def initialize args
+    @number = args[:number]
+    @size = args.fetch(:size, 2)
   end
 
   def render
