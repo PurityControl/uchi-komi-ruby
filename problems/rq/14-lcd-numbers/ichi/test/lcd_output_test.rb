@@ -13,31 +13,31 @@ class TestLcdOutput < MiniTest::Unit::TestCase
   end
 
   def test_mask_top
-    assert_equal 64, LcdOutput::Positions[:top]
+    assert_equal 0b1000000, LcdOutput::Positions[:top]
   end
 
   def test_mask_upper_left
-    assert_equal 32, LcdOutput::Positions[:upper_left]
+    assert_equal 0b0100000, LcdOutput::Positions[:upper_left]
   end
 
   def test_mask_upper_right
-    assert_equal 16, LcdOutput::Positions[:upper_right]
+    assert_equal 0b0010000, LcdOutput::Positions[:upper_right]
   end
 
   def test_mask_middle
-    assert_equal 8, LcdOutput::Positions[:middle]
+    assert_equal 0b0001000, LcdOutput::Positions[:middle]
   end
 
   def test_mask_lower_left
-    assert_equal 4, LcdOutput::Positions[:lower_left]
+    assert_equal 0b0000100, LcdOutput::Positions[:lower_left]
   end
 
   def test_mask_lower_right
-    assert_equal 2, LcdOutput::Positions[:lower_right]
+    assert_equal 0b0000010, LcdOutput::Positions[:lower_right]
   end
 
   def test_mask_bottom
-    assert_equal 1, LcdOutput::Positions[:bottom]
+    assert_equal 0b0000001, LcdOutput::Positions[:bottom]
   end
 
   def test_output_at_top
