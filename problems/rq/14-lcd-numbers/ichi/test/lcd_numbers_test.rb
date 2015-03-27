@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'lcd_numbers'
+require 'lcd_numbers_factory'
 
 class TestLcdNumbers < MiniTest::Unit::TestCase
   def setup
@@ -13,10 +14,7 @@ class TestLcdNumbers < MiniTest::Unit::TestCase
   end
 
   def test_render_123
-    lcd = LcdNumbers.new
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(1))
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(2))
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(3))
+    lcd = LcdNumbersFactory.create 123, 1
     assert_equal lcd.render,
       [["    ", " _  ", " _  "], ["  | ", "  | ", "  | "],
       ["    ", " _  ", " _  "], ["  | ", "|   ", "  | "],
@@ -24,10 +22,7 @@ class TestLcdNumbers < MiniTest::Unit::TestCase
   end
 
   def test_render_123_size_2
-    lcd = LcdNumbers.new
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(1), 2)
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(2), 2)
-    lcd.numbers << LcdNumber.new(LcdMapping.map_for(3), 2)
+    lcd = LcdNumbersFactory.create 123, 2
     assert_equal lcd.render,
       [["     ", " __  ", " __  "], ["   | ", "   | ", "   | "],
       ["   | ", "   | ", "   | "], ["     ", " __  ", " __  "],

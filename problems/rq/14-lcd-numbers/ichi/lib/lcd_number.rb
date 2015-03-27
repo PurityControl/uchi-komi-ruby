@@ -1,5 +1,5 @@
 class LcdNumber
-  def initialize number, size=1
+  def initialize number, size=2
     @number = number
     @size = size
   end
@@ -46,7 +46,7 @@ class LcdNumber
     end
   end
 
-  def char_for mask, mapping
+  def char_for_position mask, mapping
     case mask
     when :top, :middle, :bottom
       char_or_blank mask, mapping, "_"
@@ -58,7 +58,7 @@ class LcdNumber
   def render_horizontal position
     tmp = " "
     size.times do
-      tmp << char_for(position, number)
+      tmp << char_for_position(position, number)
     end
     tmp << "  "
   end
@@ -67,9 +67,9 @@ class LcdNumber
     rows = []
     tmp = ""
     size.times do
-      tmp << char_for(left, number)
+      tmp << char_for_position(left, number)
       size.times{ tmp << " " }
-      tmp << char_for(right, number) << " "
+      tmp << char_for_position(right, number) << " "
       rows << tmp
       tmp = ""
     end
