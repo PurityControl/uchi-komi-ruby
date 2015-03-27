@@ -13,12 +13,19 @@
 ** TODO Tasks
 - [X] remove redundant methods in LcdOutput and push responsibitlity for
   rendering back into calling class
-- [ ] LcdOutput could take on rendering responsibility if there was a 
-  method that took a block?
 - [ ] identify roles
 - [ ] set up tests highlighting what those roles are
 
 * Questions
+** Refactoring
+Still can't decide about the following issues.
+- should printing be lcd numbers responsibility?
+  - if it is should this be part of the render role and so should lcd
+    number have it too
+  - undecided so have left it as is
+- lcd mapping has a map / template role but should it have a more
+  specific name such as lcd_number_mapping?
 
 * Retrospective
+
 
