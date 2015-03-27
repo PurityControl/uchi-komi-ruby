@@ -2,10 +2,14 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'lcd_number'
+require 'renderer_interfact_test'
 
 class TestLcdNumber < MiniTest::Unit::TestCase
+  include RendererInterfaceTest
+
   def setup
     #write setup stuff here
+    @object = LcdNumber.new number: LcdMapping.map_for(1)
   end
 
   def teardown

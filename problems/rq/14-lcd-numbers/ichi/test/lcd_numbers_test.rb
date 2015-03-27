@@ -3,10 +3,14 @@ require 'rake'
 
 require 'lcd_numbers'
 require 'lcd_numbers_factory'
+require 'renderer_interfact_test'
 
 class TestLcdNumbers < MiniTest::Unit::TestCase
+  include RendererInterfaceTest
+
   def setup
     #write setup stuff here
+    @object = LcdNumbers.new
   end
 
   def teardown
