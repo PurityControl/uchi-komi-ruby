@@ -2,10 +2,14 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'lcd_mapping'
+require 'mapper_interface_test'
 
 class TestLcdMapping < MiniTest::Unit::TestCase
+  include MapperInterfaceTest
+
   def setup
     #write setup stuff here
+    @object = LcdMapping
   end
 
   def teardown
