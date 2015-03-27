@@ -2,10 +2,14 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'lcd_output'
+require 'switch_interface_test'
 
 class TestLcdOutput < MiniTest::Unit::TestCase
+  include SwitchInterfaceTest
+
   def setup
     #write setup stuff here
+    @object = LcdOutput
   end
 
   def teardown
