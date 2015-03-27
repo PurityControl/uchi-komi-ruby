@@ -13,8 +13,8 @@
 ** TODO Tasks
 - [X] remove redundant methods in LcdOutput and push responsibitlity for
   rendering back into calling class
-- [ ] identify roles
-- [ ] set up tests highlighting what those roles are
+- [X] identify roles
+- [X] set up tests highlighting what those roles are
 
 * Questions
 ** Refactoring
@@ -27,5 +27,12 @@ Still can't decide about the following issues.
   specific name such as lcd_number_mapping?
 
 * Retrospective
+Fairly happy with the result. Like the clarification of roles
+and enforcing this where roles are implemented by using module
+level tests.
+Unhappy with naming of the roles and some of the classes but
+currently at a loss for better names. Similarly some of the
+method names suffer the same problem.
+
 
 
