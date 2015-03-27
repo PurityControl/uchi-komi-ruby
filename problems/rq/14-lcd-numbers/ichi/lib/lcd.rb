@@ -1,6 +1,7 @@
 require  'optparse'
 require_relative  'lcd_number'
 require_relative  'lcd_numbers'
+require_relative  'lcd_numbers_factory'
 require_relative  'lcd_mapping'
 require_relative  'lcd_output'
 
@@ -24,9 +25,6 @@ end
 
 number = ARGV.pop
 
-lcd_nums = LcdNumbers.new
-lcd_nums.numbers = number.split("").map do |char|
-  LcdNumber.new(LcdMapping.map_for(Integer(char)), options[:size])
-end
+lcd_nums = LcdNumbersFactory.create(number, options[:size])
 lcd_nums.print
 
