@@ -1,0 +1,38 @@
+#+TITLE: Notes for first repetition of lcd numbers
+
+* Implementation thoughts
+** Classes
+- LcdNumber, responsible for outputting a string representing the number
+- LcdMapping, responsible for returning integers as a bitmap mask
+- LcdOutput, responsible for returning a "string" representing whether
+  there should be output at an Lcd postion. Also stores constants representing
+  the postions of an Lcd Display
+
+
+* Features
+** TODO Tasks
+- [X] remove redundant methods in LcdOutput and push responsibitlity for
+  rendering back into calling class
+- [X] identify roles
+- [X] set up tests highlighting what those roles are
+
+* Questions
+** Refactoring
+Still can't decide about the following issues.
+- should printing be lcd numbers responsibility?
+  - if it is should this be part of the render role and so should lcd
+    number have it too
+  - undecided so have left it as is
+- lcd mapping has a map / template role but should it have a more
+  specific name such as lcd_number_mapping?
+
+* Retrospective
+Fairly happy with the result. Like the clarification of roles
+and enforcing this where roles are implemented by using module
+level tests.
+Unhappy with naming of the roles and some of the classes but
+currently at a loss for better names. Similarly some of the
+method names suffer the same problem.
+
+
+
