@@ -1,0 +1,17 @@
+#+TITLE: Notes for first repetition of gedcom parser
+
+* Implementation thoughts
+** Classes
+
+* Features
+** TODO Tasks
+
+* Questions
+** Refactoring
+
+* Retrospective
+
+
+
+
+
