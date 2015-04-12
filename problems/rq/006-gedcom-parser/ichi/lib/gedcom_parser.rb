@@ -1,3 +1,4 @@
+require 'ostruct'
 class GedcomParser
 
   def initialize filename
@@ -7,6 +8,13 @@ class GedcomParser
   def each
     file.each do |line|
       yield line
+    end
+  end
+
+  def each_object(klass=OpenStruct)
+    each do |line|
+      level, tag, data = line.gsub(/\s+/, ' ').strip.split(" ")
+      yield klass.new(level: level, tag: tag, data: data)
     end
   end
 
