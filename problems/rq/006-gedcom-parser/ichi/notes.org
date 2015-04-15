@@ -5,6 +5,9 @@
 
 * Features
 ** TODO Tasks
+- [ ] implement test for file contract
+- [ ] implement test for class contract passed
+  into each_object
 
 * Questions
 ** Refactoring
