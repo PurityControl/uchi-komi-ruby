@@ -1,8 +1,9 @@
 require 'ostruct'
 class GedcomParser
+  include Enumerable
 
-  def initialize filename
-    @file = File.new filename
+  def initialize file
+    @file = file
   end
 
   def each
