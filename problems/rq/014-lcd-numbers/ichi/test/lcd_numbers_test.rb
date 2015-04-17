@@ -3,7 +3,7 @@ require 'rake'
 
 require 'lcd_numbers'
 require 'lcd_numbers_factory'
-require 'renderer_interfact_test'
+require 'renderer_interface_test'
 
 class TestLcdNumbers < MiniTest::Unit::TestCase
   include RendererInterfaceTest
