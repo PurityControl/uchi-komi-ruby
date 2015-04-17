@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'lcd_number'
-require 'renderer_interfact_test'
+require 'renderer_interface_test'
 
 class TestLcdNumber < MiniTest::Unit::TestCase
   include RendererInterfaceTest
