@@ -15,6 +15,14 @@ class TestFile
   end
 end
 
+class TestFileDouble < MiniTest::Unit::TestCase
+  include FileInterfaceTest
+
+  def setup
+    @object = TestFile.new
+  end
+end
+
 class TestGedcomParser < MiniTest::Unit::TestCase
   def setup
   end

@@ -5,7 +5,7 @@
 
 * Features
 ** TODO Tasks
-- [ ] implement test for file contract
+- [X] implement test for file contract
 - [ ] implement test for class contract passed
   into each_object
 
