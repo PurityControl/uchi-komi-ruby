@@ -15,7 +15,7 @@ class TestFile
   end
 end
 
-class TestMadlibs < MiniTest::Unit::TestCase
+class TestGedcomParser < MiniTest::Unit::TestCase
   def setup
   end
 
