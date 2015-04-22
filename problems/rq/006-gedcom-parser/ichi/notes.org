@@ -2,6 +2,13 @@
 
 * Implementation thoughts
 ** Classes
+GedcomParser takes a file and Parses the file line by line
+returning instances of a class that takes arguments for level, tag and data 
+
+GedcomWriter takes a class responsible for creating a gedcom file
+in a certain format. It passes on each GedcomLine to the formatter
+until the report is written.
+
 
 * Features
 ** TODO Tasks
