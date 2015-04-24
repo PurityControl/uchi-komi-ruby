@@ -15,6 +15,9 @@ until the report is written.
 - [X] implement test for file contract
 - [ ] implement test for class contract passed
   into each_object
+- [ ] get xmlwriter.save to take a block allowing it to sort out
+  writing and close the file
+- [ ] should the xml writer know about its input_stream?
 
 * Questions
 ** Refactoring

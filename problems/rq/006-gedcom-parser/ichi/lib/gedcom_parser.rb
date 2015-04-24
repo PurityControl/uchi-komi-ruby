@@ -2,8 +2,9 @@ require 'ostruct'
 class GedcomParser
   include Enumerable
 
-  def initialize file
+  def initialize file, gedcom_line_klass=OpenStruct
     @file = file
+    @gedcom_line_klass = gedcom_line_klass
   end
 
   def each
@@ -12,15 +13,18 @@ class GedcomParser
     end
   end
 
-  def each_object(klass=OpenStruct)
+  def each_object()
     each do |line|
-      level, tag, data = line.gsub(/\s+/, ' ').strip.split(" ")
-      yield klass.new(level: level, tag: tag, data: data)
+      next if line.strip.empty?
+      level, tag, *data = line.gsub(/\s+/, ' ').strip.split(' ')
+      yield gedcom_line_klass.new(level: Integer(level),
+                                  tag: tag,
+                                  data: data.join(' '))
     end
   end
 
   private
 
-  attr_accessor :file
+  attr_accessor :file, :gedcom_line_klass
 
 end
