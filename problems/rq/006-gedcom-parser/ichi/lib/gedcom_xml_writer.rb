@@ -10,7 +10,6 @@ class GedcomXmlWriter
   end
 
   def output
-    #input_stream.each_object do |line|
     input_stream.each do |line|
       line.id? ? add_id(line) : add_tag(line)
     end
@@ -23,7 +22,6 @@ class GedcomXmlWriter
   end
 
   def add_id(line)
-    # could the commonality with add_tag be a method that we pass a block to?
     node = line_node(line)
     id = node.add_element line.data, {"id" => line.id}
     update_stack line, id

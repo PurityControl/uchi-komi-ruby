@@ -13,16 +13,26 @@ until the report is written.
 * Features
 ** TODO Tasks
 - [X] implement test for file contract
-- [ ] implement test for class contract passed
+- [X] implement test for class contract passed
   into each_object
-- [ ] get xmlwriter.save to take a block allowing it to sort out
-  writing and close the file
-- [ ] should the xml writer know about its input_stream?
+- [X] refactor each implementation - currently too complicated
+- [X] look at block comment in gedcom xml writer
 
 * Questions
 ** Refactoring
 
 * Retrospective
+
+Happy with
+- clarification of roles and implementation of roles through testing
+- dependency injection
+- making data behaviour
+
+Areas for improvement
+- refactoring of add_id and add_tag to dry up implementation
+- refactoring of each in gedcom_parser to make method easier to understand
+  found it difficult to elegantly split the two paths of the if into
+  their own methods but this would be a worthwhile exercise
 
 
 
