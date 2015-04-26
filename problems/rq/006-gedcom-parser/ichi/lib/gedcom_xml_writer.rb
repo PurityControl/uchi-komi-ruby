@@ -1,9 +1,8 @@
 require "rexml/document"
 class GedcomXmlWriter
 
-  def initialize input_stream, output_stream
+  def initialize input_stream
     @input_stream = input_stream
-    @output_stream = output_stream
     @xml = REXML::Document.new
     @level = 0
     @stack = []
@@ -41,6 +40,6 @@ class GedcomXmlWriter
     line.level == 0 ? root : stack[line.level-1]
   end
 
-  attr_reader :file, :xml, :input_stream, :output_stream, :root
+  attr_reader :xml, :input_stream, :root
   attr_accessor :stack, :level
 end
