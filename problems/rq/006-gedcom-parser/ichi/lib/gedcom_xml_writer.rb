@@ -10,7 +10,8 @@ class GedcomXmlWriter
   end
 
   def output
-    input_stream.each_object do |line|
+    #input_stream.each_object do |line|
+    input_stream.each do |line|
       line.id? ? add_id(line) : add_tag(line)
     end
     @xml.root
