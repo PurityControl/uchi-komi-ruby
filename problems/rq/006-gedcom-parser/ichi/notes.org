@@ -1,0 +1,40 @@
+#+TITLE: Notes for first repetition of gedcom parser
+
+* Implementation thoughts
+** Classes
+GedcomParser takes a file and Parses the file line by line
+returning instances of a class that takes arguments for level, tag and data 
+
+GedcomWriter takes a class responsible for creating a gedcom file
+in a certain format. It passes on each GedcomLine to the formatter
+until the report is written.
+
+
+* Features
+** TODO Tasks
+- [X] implement test for file contract
+- [X] implement test for class contract passed
+  into each_object
+- [X] refactor each implementation - currently too complicated
+- [X] look at block comment in gedcom xml writer
+
+* Questions
+** Refactoring
+
+* Retrospective
+
+Happy with
+- clarification of roles and implementation of roles through testing
+- dependency injection
+- making data behaviour
+
+Areas for improvement
+- refactoring of add_id and add_tag to dry up implementation
+- refactoring of each in gedcom_parser to make method easier to understand
+  found it difficult to elegantly split the two paths of the if into
+  their own methods but this would be a worthwhile exercise
+
+
+
+
+
