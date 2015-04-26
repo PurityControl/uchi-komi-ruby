@@ -3,7 +3,7 @@ require 'rake'
 
 require 'gedcom_xml_writer'
 
-class TestGedcomXmlWriter < MiniTest::Unit
+class TestGedcomXmlWriter < MiniTest::Test
   def setup
   end
 

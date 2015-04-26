@@ -3,6 +3,7 @@ require 'rake'
 require 'ostruct'
 
 require 'gedcom_parser'
+require 'gedcom_line'
 
 class TestFile
 
@@ -15,7 +16,7 @@ class TestFile
   end
 end
 
-class TestFileDouble < MiniTest::Unit
+class TestFileDouble < MiniTest::Test
   include FileInterfaceTest
 
   def setup
@@ -23,8 +24,10 @@ class TestFileDouble < MiniTest::Unit
   end
 end
 
-class TestGedcomParser < MiniTest::Unit
+class TestGedcomParser < MiniTest::Test
+  include GedcomParserInterfaceTest
   def setup
+    @object =  GedcomParser.new(File.new("test"))
   end
 
   def teardown
@@ -35,9 +38,15 @@ class TestGedcomParser < MiniTest::Unit
     assert GedcomParser.new(File.new("test"))
   end
 
-  def test_each_object_return_openstruct
-    GedcomParser.new(TestFile.new).each_object do |obj|
-      assert_instance_of OpenStruct, obj
+  def test_each_returns_string
+    GedcomParser.new(TestFile.new).each do |obj|
+      assert_instance_of String, obj
+    end
+  end
+
+  def test_each_returns_oject_passed_at_instantiation
+    GedcomParser.new(TestFile.new, GedcomLine).each do |obj|
+      assert_instance_of GedcomLine, obj
     end
   end
 end
