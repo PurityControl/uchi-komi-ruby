@@ -15,7 +15,7 @@ class TestFile
   end
 end
 
-class TestFileDouble < MiniTest::Unit::TestCase
+class TestFileDouble < MiniTest::Unit
   include FileInterfaceTest
 
   def setup
@@ -23,7 +23,7 @@ class TestFileDouble < MiniTest::Unit::TestCase
   end
 end
 
-class TestGedcomParser < MiniTest::Unit::TestCase
+class TestGedcomParser < MiniTest::Unit
   def setup
   end
 

@@ -3,7 +3,7 @@ require 'rake'
 
 require 'gedcom_line'
 
-class TestGedcomLine < MiniTest::Unit::TestCase
+class TestGedcomLine < MiniTest::Unit
   include GedcomLineInterfaceTest
 
   def setup
