@@ -4,7 +4,10 @@ require 'rake'
 require 'gedcom_line'
 
 class TestGedcomLine < MiniTest::Unit::TestCase
+  include GedcomLineInterfaceTest
+
   def setup
+    @object = GedcomLine.new id: 1, tag: "tag", data: "data"
   end
 
   def teardown
