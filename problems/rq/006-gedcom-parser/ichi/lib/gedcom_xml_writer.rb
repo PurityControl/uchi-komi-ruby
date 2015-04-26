@@ -16,6 +16,7 @@ class GedcomXmlWriter
     @xml.root
   end
 
+  private
   def update_stack(line, node)
     stack[line.level] = node
   end
@@ -33,8 +34,6 @@ class GedcomXmlWriter
     tag.text = line.data
     update_stack line, tag
   end
-
-  private
 
   def line_node(line)
     line.level == 0 ? root : stack[line.level-1]
