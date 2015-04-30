@@ -12,7 +12,7 @@ class TestSummationsPrimes < MiniTest::Unit::TestCase
     #write teardown stuff here
   end
 
-  def test_product_pythagorean_triplet
+  def test_summation_of_primes
     assert_equal 142913828922, SummationPrimes.sum(2000000)
   end
 end
