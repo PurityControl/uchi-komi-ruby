@@ -1,0 +1,19 @@
+#+TITLE: Notes for first iteration of Highly Divisible Triangular Number
+
+The number oof factors that a number has can be calculated from its prime
+factors.
+
+Each prime factor has a power and the number of factors is the product of
+each factors power + 1
+
+eg 54 is:
+
+2**1, 3**3
+and so the number of factors is (1+1) * (3 + 1) = 8
+
+* Retrospective
+I had problems reducing the api surface area. I could not make the num_divisors
+method private. This is because it is called from the block passed to the
+Enumerator functions and therefore self has a different scope than an instance
+of the class.
+
