@@ -1,0 +1,10 @@
+#+TITLE: Notes for first iteration of Large Sum
+
+sum numbers and truncate to the first 10 digits
+
+* Retrospective
+Most of the work involved is around casting back and forth
+between strings and integers.
+Functional paradigms help keep the solution succinct.
+
+
