@@ -1,0 +1,12 @@
+#+TITLE: Notes for first iteration of Longest Collatz
+
+create distinct collatz class as enumerator of collatz sequence.
+Then have helper class that creates a tuple of each number and
+the length of the collatz sequence returning the one with the
+longest collatz sequence
+
+
+* Retrospective
+
+
+
