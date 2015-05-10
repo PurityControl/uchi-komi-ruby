@@ -7,6 +7,5 @@ longest collatz sequence
 
 
 * Retrospective
-
-
-
+once collatz class was implemented then mapping over them to
+find the largest sequence was straightforward.
