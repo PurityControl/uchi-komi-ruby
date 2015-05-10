@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'rake'
 
 require 'collatz'
+require 'longest_collatz'
 
 class LargeSumTest < MiniTest::Unit::TestCase
   def setup
@@ -17,6 +18,8 @@ class LargeSumTest < MiniTest::Unit::TestCase
   end
 
   def test_euler_answer
-    skip "implement me"
+    lc = LongestCollatz.new
+    assert_equal 837799, lc.euler
   end
+
 end

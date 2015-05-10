@@ -1,8 +1,10 @@
 class Collatz
   include Enumerable
 
+  attr_accessor :seed
+
   def initialize seed
-    @current = seed
+    @current = @seed = seed
   end
 
   def each
