@@ -1,0 +1,8 @@
+#+TITLE: Notes for first iteration of Product in Grid
+
+* 1st solution proposed
+traditional method of keeping track of start, mid and end variables.
+then narrowing start and end to hone in on solution
+
+* Retrospective
+Simple iterative version of binary search
