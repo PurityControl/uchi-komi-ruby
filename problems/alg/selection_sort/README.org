@@ -1,0 +1,38 @@
+#+TILE: Selection Sort
+
+* Problem Description
+
+Given a sequence of items (typically an array). A selection sort follows the
+following algorithm.
+
+- create an empty sequence to store the sorted result into
+- visit each item in the array and select the smallest[fn:1] item in the
+  sequence
+- add the smallest item to the end of the result sequence and remove it
+  from the original sequence
+- repeat the process until all items have been removed from the original
+  sequence
+- the new sequence is the sorted sequence
+
+Implement the Selection Sort in a language of your choice.
+
+* Time, Space and Big O
+** TIme
+For each element to be sorted the list has to be searched once (n items)
+to finde the smallest. This has to be done n times so this has time
+efficiency of O(n^2)
+
+** Space
+The Space required is the same as the length of the original array as for
+every element in array. An element is created in a new sequnce but removed
+from the old sequence this is 0(n) for space requirements. Even if the old
+sequence was not deleted it would still be 0(n) as the space requirements
+grown linearly with the size of the list.
+
+
+* Footnotes
+
+[fn:1]When I say the smallest I mean smallest in the context of the sort
+criteria. This could be the largest if the sort was in decending order or
+some other completely different criteria.
+

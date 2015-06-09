@@ -1,0 +1,4 @@
+#+TITLE: Notes for Selection Sort
+
+Simple implementation but using ruby's enumeration and blocks to iterate
+over array.
