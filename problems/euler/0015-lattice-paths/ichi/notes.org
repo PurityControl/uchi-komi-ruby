@@ -1,0 +1,13 @@
+#+TITLE: Notes for first iteration of Lattice Paths
+
+The number of lattice paths for a n x n grid is (2n)! / (n!)**2.
+This is based on a property of pascals triangle covered in combinatrics
+ie.
+(length of side (a) + length of side (b))! / length side (a)! * length side (b)!
+
+* Retrospective
+This is a very efficient and simply mathematical solution to implement.
+Another iteration using a breadth first graphing algorithm would be interesting
+from both a brute force speed perspective and as an exercise for the algorithm
+implementation.
+
