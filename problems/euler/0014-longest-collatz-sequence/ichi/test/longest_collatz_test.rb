@@ -4,7 +4,7 @@ require 'rake'
 require 'collatz'
 require 'longest_collatz'
 
-class LargeSumTest < MiniTest::Unit::TestCase
+class LongestCollatzTest < MiniTest::Unit::TestCase
   def setup
   end
 
