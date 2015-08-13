@@ -1,0 +1,6 @@
+#+TITLE: Notes for second iteration of largest palindrome
+
+Used each and max to solve the problem which felt more idiomatic ruby.
+Reduced public api by making internal methods private.
+Implementation is slower though by about 3x.
+
