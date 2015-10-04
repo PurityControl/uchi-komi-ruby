@@ -50,7 +50,7 @@ task :default => :test
 #+END_SRC
  
 Then simply running ~rake~ will execute the tests if you choose not to make
-tests the defualt task as we did above them simply run ~rake test~ to run the
+tests the defualt task as we did above then simply run ~rake test~ to run the
 tests.
 
 If you want to run just a single test file you can run the command
@@ -112,7 +112,7 @@ describe Suite do
 end
 #+END_SRC
 
-** Mocks Stubs ...
+** Mocks, Stubs ...
 
 Have a look at the minitest repo for further information on how ot setup
 mocks, stubs etc.
