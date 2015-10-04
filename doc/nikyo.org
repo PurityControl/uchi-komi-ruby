@@ -1,1 +1,120 @@
 #+TITLE: Dai-nikyo (Group 2) - Testing
+
+* Minitest
+
+Minitest ships with ruby and as such does not have any additional external
+dependencies.
+
+A quick overview can be found as part of the README at the projects
+[[https://github.com/seattlerb/minitest][repo]]
+
+** Setup
+
+Minitest can either be used directly from the command line or by setting
+up a rake task to automate the process.
+
+*** Command Line
+
+To run minitest from the command line just use ruby to invoke the minitest
+file. You will need to pass the load path directories that your minitest
+files and your working code reside in to ruby if they are not in the directory
+you invoke ruby from.
+
+If you have your code in a lib subdirectory and your minitests in a test
+subdirectory call your minitest file with
+
+#+BEGIN_SRC ruby
+ruby -Ilib:test test/my_minitest_file.rb
+#+END_SRC
+
+*** Rake task
+
+Assuming a similar directory structure to the one discussed in running
+minitest from the command line ie. code in a lib subdirectory and tests in a
+test subdirectory. Then you can create a ~Rakefile~ in your project root
+with the following snippet.
+
+#+BEGIN_SRC ruby
+require 'rake'
+require 'rake/testtask'
+
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/*_test.rb']
+  t.verbose = true
+  t.options = "--pride --verbose"
+end
+
+desc "runs all the projects tests"
+task :default => :test
+#+END_SRC
+ 
+Then simply running ~rake~ will execute the tests if you choose not to make
+tests the defualt task as we did above then simply run ~rake test~ to run the
+tests.
+
+If you want to run just a single test file you can run the command
+
+~rake test TEST=test/my_minitest_file.rb~
+
+** Styles
+
+*** Unit tests
+ If you plan to create the file in a unit test format: 
+
+- require "minitest/autorun"
+- inhereit your test class from Minitest::Test
+- have a setup method if needed
+- have a teardown method if needed
+- use minitest assertions
+
+The template below will get you started.
+
+#+BEGIN_SRC ruby
+require "minitest/autorun"
+
+class TestMeme < Minitest::Test
+  def setup
+    @class_var = ClassTested.new
+  end
+
+  def test_equal
+    assert_equal 1, 1
+  end
+
+  def test_refute
+    refute 2 == 1
+  end
+
+  def test_that_will_be_skipped
+    skip "test this later"
+  end
+end
+#+END_SRC
+
+*** Specs
+
+There is also a spec format as shown in the template below
+
+#+BEGIN_SRC ruby
+require "minitest/autorun"
+
+describe Suite do
+  before do
+    # before tasks ...
+  end
+
+  describe "my feature here" do
+    it "has a requirement" do
+      # my tests ....
+    end
+  end
+end
+#+END_SRC
+
+** Mocks, Stubs ...
+
+Have a look at the minitest repo for further information on how ot setup
+mocks, stubs etc.
+
+* Rspec
