@@ -1,0 +1,2 @@
+class NumberLetterCounts
+end
