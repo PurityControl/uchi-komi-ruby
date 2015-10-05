@@ -2,6 +2,7 @@ class NumberLetterCounts
   include Enumerable
 
   def initialize total
+    check_within_bounds total
     @total = total
     @letter_from_number = [
       [90, "ninety"],
@@ -46,6 +47,11 @@ class NumberLetterCounts
 
   private
   attr_accessor :total, :letter_from_number
+
+  def check_within_bounds num
+    raise ArgumentError.new("Number must be greater than 0") if num <= 0
+    raise ArgumentError.new("Number cannot exceed 1000") if num > 1000
+  end
 
   def number_to_word num
     description = ""

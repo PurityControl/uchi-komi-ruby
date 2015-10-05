@@ -3,11 +3,11 @@ require "number_letter_counts"
 
 class NumberLetterCountsTest < Minitest::Test
   def test_error_when_negative
-    skip "nlc should throw an error when instaniated with less than 1"
+    assert_raises(ArgumentError) {NumberLetterCounts.new 0}
   end
 
   def test_error_when_beyond_limit
-    skip "nlc should throw an error when instantiated with more than 1000"
+    assert_raises(ArgumentError) {NumberLetterCounts.new 1001}
   end
 
   def test_to_one
