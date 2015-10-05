@@ -30,6 +30,16 @@ class NumberLetterCountsTest < Minitest::Test
     assert_count 39
   end
 
+  def test_to_twenty
+    nlc_to 20
+    assert_count 112
+  end
+
+  def test_to_twent_one
+    nlc_to 21
+    assert_count 121
+  end
+
   def test_1_is_one
     nlc_to 1
     assert_equal "one", @nlc.send(:number_to_word, 1)

@@ -4,6 +4,16 @@ class NumberLetterCounts
   def initialize total
     @total = total
     @letter_from_number = [
+      [20, "twenty"],
+      [19, "nineteen"],
+      [18, "eighteen"],
+      [17, "seventeen"],
+      [16, "sixteen"],
+      [15, "fifteen"],
+      [14, "fourteen"],
+      [13, "thirteen"],
+      [12, "twelve"],
+      [11, "eleven"],
       [10, "ten"],
       [9, "nine"],
       [8, "eight"],
@@ -34,7 +44,7 @@ class NumberLetterCounts
     description = ""
     letter_from_number.each do |item, word|
       if num / item > 0
-        description <<  " #{word}"
+        description <<  word
         num -= item
       end
     end
