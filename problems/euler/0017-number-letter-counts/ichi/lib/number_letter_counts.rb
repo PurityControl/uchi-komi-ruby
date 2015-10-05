@@ -5,6 +5,16 @@ class NumberLetterCounts
     check_within_bounds total
     @total = total
     @letter_from_number = [
+      [1000, "onethousand"],
+      [900, "ninehundred"],
+      [800, "eighthundred"],
+      [700, "sevenhundred"],
+      [600, "sixhundred"],
+      [500, "fivehundred"],
+      [400, "fourhundred"],
+      [300, "threehundred"],
+      [200, "twohundred"],
+      [100, "onehundred"],
       [90, "ninety"],
       [80, "eighty"],
       [70, "seventy"],
@@ -58,6 +68,9 @@ class NumberLetterCounts
     letter_from_number.each do |item, word|
       if num / item > 0
         description <<  word
+        if num > 100 && num % item != 0
+          description << "and"
+        end
         num -= item
       end
     end

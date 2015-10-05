@@ -90,6 +90,21 @@ class NumberLetterCountsTest < Minitest::Test
     assert_count 854
   end
 
+  def test_to_one_hundred
+    nlc_to 100
+    assert_count 864
+  end
+
+  def test_to_one_hundred_and_one
+    nlc_to 101
+    assert_count 880
+  end
+
+  def test_euler
+    nlc_to 1000
+    assert_count 21124
+  end
+
   def test_1_is_one
     nlc_to 1
     assert_equal "one", @nlc.send(:number_to_word, 1)
