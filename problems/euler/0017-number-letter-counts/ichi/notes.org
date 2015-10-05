@@ -1,0 +1,13 @@
+#+TITLE: Notes for number letter counts problem
+
+Retrospective.
+
+Building up tests slowly helped a lot. Got some inspiration from
+Jim Weirarch's coding kata video on [[https://youtu.be/ronr_CG8x0Y][youtube]]
+
+- Feel like appending an 'and' to hundreds when appropriate should
+  be delegated to another method using the "tell not do" principle as the 
+  ~number_to_word~ method is starting to get a little large.
+
+- Feel like I should start to make more of an effort to add RDoc info to
+  the source code using SPD principles.
