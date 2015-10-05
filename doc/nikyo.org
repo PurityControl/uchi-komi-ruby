@@ -27,6 +27,12 @@ subdirectory call your minitest file with
 ruby -Ilib:test test/my_minitest_file.rb
 #+END_SRC
 
+Alternatively run all tests in the directory with
+
+#+BEGIN_SRC ruby
+ruby -Ilib:test test/*
+#+END_SRC
+
 *** Rake task
 
 Assuming a similar directory structure to the one discussed in running
@@ -118,3 +124,117 @@ Have a look at the minitest repo for further information on how ot setup
 mocks, stubs etc.
 
 * Rspec
+
+To install rspec you will need ruby and ruby gems installed. Given these
+are on you system install rspec with.
+
+~gem install rspec~
+
+** Configuration
+
+Configuration options can be supplied at the command line eg. ~--color~
+
+The list of possible configuration options can be found using ~rspec --help~
+
+Configuration options can also be added to rspec configuration files.
+These files have increased precedent based on proximity to the source
+code.
+
+- Global: ~/.rspec  (lowest priority)
+- Project: ./.rspec (versioned with source code)
+- Local: ./.rspec-local (not versioned with source code)
+- Command Line: (Largest Priority)
+
+A smaple configuration file may look something like
+
+#+BEGIN_SRC sh
+--color
+--format documentation
+--profile
+--no-fail-fast
+--order defined
+#+END_SRC
+
+** Documentation
+
+Further information can be found on the github pages of the project for
+[[https://github.com/rspec/rspec][
+rsepc]]
+[[https://github.com/rspec/rspec-core][rspec-core]]
+
+** Using Rspec in a project
+
+In the root directory of the project repository type
+
+~rspec --init~
+
+This creates a ~.rspec~ config file and a ~spec/spec_helper.rb~ file.
+
+** Writing tests
+
+In the spec directory, create a file with the format
+
+~name_of_class_spec.rb~
+
+in that file require the class you are testing
+
+Then use the rspec dsl to write your tests in the file
+
+#+BEGIN_SRC ruby
+require 'my_class'
+
+describe 'MyClass' do
+
+  context 'my new context' # context is alia for describe
+    it "should do something" do
+      expect(  ).to(   )
+    end
+
+    specify "a property" do
+      expect(    ).not_to(    )
+    end
+  end
+
+  # use .method in description for class methods
+  # use #method in description for instance methods
+end
+
+#+END_SRC
+
+** Running tests
+
+Test a specific file with
+
+~rspec spec/my_class_spec.rb~
+
+To run a single test in a file pass in one of the line numbers for that test
+
+~rspec spec/my_class_spec.rb:7~
+
+Run the full suite with
+
+~rspec~
+
+** Pending and skipped tests
+
+A pending test differes from a skipped test because rspec expects a pending
+test to fail and that is the reason you marked it pending rather than skipping
+it.
+As such, if a pending test passes rspec will show a failure.
+
+This also has ramifications in terms of time taken to run tests. Pending tests
+will still be executed, skipped tests will not.
+
+*** Pending
+
+You can make tests pending by omitting the block passed to the test description
+
+Additionally you can add ~pending~ as a command inside the block.
+
+*** Skipping
+
+You can change your ~describe~ to ~xdescribe~ or your ~it~ to ~xit~
+
+Additionally you can add ~skip~ as a command inside the block.
+
+
