@@ -4,6 +4,13 @@ class NumberLetterCounts
   def initialize total
     @total = total
     @letter_from_number = [
+      [90, "ninety"],
+      [80, "eighty"],
+      [70, "seventy"],
+      [60, "sixty"],
+      [50, "fifty"],
+      [40, "forty"],
+      [30, "thirty"],
       [20, "twenty"],
       [19, "nineteen"],
       [18, "eighteen"],

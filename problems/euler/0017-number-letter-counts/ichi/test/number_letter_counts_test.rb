@@ -35,9 +35,59 @@ class NumberLetterCountsTest < Minitest::Test
     assert_count 112
   end
 
-  def test_to_twent_one
+  def test_to_twenty_one
     nlc_to 21
     assert_count 121
+  end
+
+  def test_to_twenty_nine
+    nlc_to 29
+    assert_count 202
+  end
+
+  def test_to_thirty
+    nlc_to 30
+    assert_count 208
+  end
+
+  def test_to_thirty_nine
+    nlc_to 39
+    assert_count 298
+  end
+
+  def test_to_forty
+    nlc_to 40
+    assert_count 303
+  end
+
+  def test_to_forty_nine
+    nlc_to 49
+    assert_count 384
+  end
+
+  def test_to_fifty_nine
+    nlc_to 59
+    assert_count 470
+  end
+
+  def test_to_sixty_nine
+    nlc_to 69
+    assert_count 556
+  end
+
+  def test_to_seventy_nine
+    nlc_to 79
+    assert_count 662
+  end
+
+  def test_to_eighty_nine
+    nlc_to 89
+    assert_count 758
+  end
+
+  def test_to_ninety_nine
+    nlc_to 99
+    assert_count 854
   end
 
   def test_1_is_one
