@@ -2,6 +2,14 @@ require "minitest/autorun"
 require "number_letter_counts"
 
 class NumberLetterCountsTest < Minitest::Test
+  def test_error_when_negative
+    skip "nlc should throw an error when instaniated with less than 1"
+  end
+
+  def test_error_when_beyond_limit
+    skip "nlc should throw an error when instantiated with more than 1000"
+  end
+
   def test_to_one
     nlc_to 1
     assert_count 3
