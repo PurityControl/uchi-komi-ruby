@@ -63,6 +63,24 @@ If you want to run just a single test file you can run the command
 
 ~rake test TEST=test/my_minitest_file.rb~
 
+*** Different output formats
+
+If you are sharing tests with clients you may want more informative output
+than the defaults give.
+
+The gem minitest-reporters allows for different types of output.
+For more information refer to
+[[https://github.com/kern/minitest-reporters][minitest reporters github repo]]
+
+#+BEGIN_SRC ruby
+gem install minitest-reporters
+
+# in test_helper.rb
+
+require "minitest/reporters"
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+#+END_SRC
+
 ** Styles
 
 *** Unit tests
