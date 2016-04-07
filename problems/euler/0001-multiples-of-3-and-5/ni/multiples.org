@@ -33,7 +33,8 @@ Options for the =:comments= keyword are:
 | both   | same as link and org together                       |
 |--------+-----------------------------------------------------|
 
-
+** Tests
+Here are the minitest tests.
 
 #+BEGIN_SRC ruby :tangle test/multiples_test.rb :comments link
   require 'minitest/autorun'
