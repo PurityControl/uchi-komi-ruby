@@ -1,0 +1,96 @@
+#+TITLE: Mutliples of threes and fives
+
+* Literate programming in ruby.
+
+First lets setup the tests.
+Testing the ruby code inside of the source code blocks within the org
+file turns out to be complicated.
+However the codes can still be embedded in the org file then output to
+source code files using the tangling features of org mode.
+
+** Tangling
+Using the keyword =:tangle= allows you to export the code into an
+external file. By default this file will be the same name as the org
+file but with an extension appropriate for the language you are
+exporting. A more useful option is to supply a filename after the
+=:tangle= keyword and the code will be exported to this file name.
+
+Exporting the code to the files is done by running the
+=org-bable-tangle= command which is bound to =C-c C-v C-t=.
+
+If you want to be able to navigate back to the org file from the
+source code file that was created from tangling you will need to use
+the =:comments= keyword. This is sometimes necessary when debugging
+and going to line numbers to see where the problem is.
+
+Options for the =:comments= keyword are:
+
+| option | effect                                              |
+|--------+-----------------------------------------------------|
+| no     | same as omitting the keyword                        |
+| link   | embeds comment in source navigating to org file     |
+| org    | includes nearest org mode text as comment in source |
+| both   | same as link and org together                       |
+|--------+-----------------------------------------------------|
+
+
+
+#+BEGIN_SRC ruby :tangle test/multiples_test.rb :comments link
+  require 'minitest/autorun'
+  require 'rake'
+
+  require 'multiples'
+
+  class TestNewProject < MiniTest::Unit::TestCase
+    def setup
+      #write setup stuff here
+    end
+
+    def teardown
+      #write teardown stuff here
+    end
+
+    def test_multiples_below_10
+      assert_equal 23, Multiples::multiples_below(10)
+    end
+
+    def test_multiples_below_1000
+      assert_equal 233168, Multiples::multiples_below(1000)
+    end
+  end
+#+END_SRC
+
+* Now write the code
+
+This is implemented as a module function. Module functions allow us to
+use the module as a receiver when calling the function, such as
+=Multiples::multiples_below=.
+
+#+BEGIN_SRC ruby :tangle lib/multiples.rb :comments link
+  module Multiples
+    module_function
+    def multiples_below limit
+      (1...limit).select{|num| num % 3 == 0 or num % 5 == 0}.reduce(:+)
+    end
+  end
+#+END_SRC
+
+* Export the code and test
+
+Running =org-babel-tangle= =C-c C-v C-t= exports all blocks in the org
+file marked for tangling so this file will export the tests and the
+implementation.
+
+Once the code has been run all that is left to do is run =rake= at the
+command line to see whether the tests pass
+
+#+BEGIN_EXAMPLE
+M-x shell
+rake
+#+END_EXAMPLE
+
+I was wondering if rake could be executed as source code within the
+org file but it cannot find the minitest files. This is normally
+because the shell isn't a login shell.
+As yet I haven't discovered a way to make org shell snippets run as a
+login shell.
