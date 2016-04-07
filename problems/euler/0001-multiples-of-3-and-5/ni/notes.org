@@ -1,0 +1,8 @@
+#+TITLE: Notes for first iteration of multiples
+
+Same implementation as initial solution but practiced as an exercise
+in literate programming. 
+
+Most of the learning revolves around learning the parameters to give
+to source code blocks rather than creating compelling pros worthy of
+the effort of literate programming.
